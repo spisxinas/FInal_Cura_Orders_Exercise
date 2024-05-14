@@ -1,0 +1,73 @@
+
+@service = main
+### 
+POST http://localhost:4004/odata/v4/{{service}}/OrderItems
+Content-Type: application/json
+
+{"OrderItemID":190,"Product_ProductID":1, "quantity":111}
+
+
+### 
+GET http://localhost:4004/odata/v4/{{service}}/OrderItems
+
+
+
+###
+POST http://localhost:4004/odata/v4/{{service}}/Customers
+Content-Type: application/json
+
+{"CustomerID":206 ,"email": "spiros@gmail.com" }
+
+
+###
+POST http://localhost:4004/odata/v4/{{service}}/calcOrderItem
+Content-Type: application/json
+
+{"OrderItemID":25,"Order_OrderID":1,"Product_ProductID":1,"quantity":50,"lineTotal":15}
+
+
+Content-Type: application/json
+
+{"OrderItemID":25,"Product_ProductID":1, "quantity":50}
+
+
+###
+POST http://localhost:4004/odata/v4/main/calcOrderItem
+Content-Type: application/json
+ 
+{"OrderItem":{"OrderItemID":24,"Product_ProductID":1, "quantity":50}}
+
+//////////////////////////////////////////////////////////////////////////
+
+###
+POST http://localhost:4004/odata/v4/main/MyFunc
+Content-Type: application/json
+ 
+{"Object":{"OrderItemID":49,"Order_OrderID":5,"Product_ProductID":1,"quantity":100}}
+
+### 
+GET http://localhost:4004/odata/v4/{{service}}/OrderItems
+
+###
+POST  http://localhost:4004/odata/v4/{{service}}/TotalAmount
+Content-Type: application/json
+
+{"Object":{"OrderID":1 , "Customer_CustomerID":1}}
+
+
+###
+POST http://localhost:4004/odata/v4/{{service}}/Orders
+Content-Type: application/json
+
+{"OrderID":10, "Customer_CustomerID":1 }
+
+
+###
+POST http://localhost:4004/odata/v4/{{service}}/OrderItems
+Content-Type: application/json
+
+{"OrderItemID":453, "Order_OrderID":1, "Product_ProductID":1, "quantity":1234}
+
+
+###
+GET http://localhost:4004/odata/v4/{{service}}/

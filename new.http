@@ -1,0 +1,6 @@
+@service = main
+###
+POST  http://localhost:4004/odata/v4/{{service}}/OrderItems
+Content-Type: application/json
+
+{"Product":1 , "quantity":1111}
