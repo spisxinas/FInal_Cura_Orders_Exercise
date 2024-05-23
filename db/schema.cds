@@ -26,6 +26,5 @@ entity Order {
     key OrderID : Integer;
     Customer : Association to Customer;
     orderDate : DateTime @cds.on.insert : 'CURRENT_DATE'; // Default to current date on insert
-    totalAmount: Decimal(15, 2) @cds.calculated
-    
+    totalAmount: Decimal(15, 2) @cds.calculated   
 }

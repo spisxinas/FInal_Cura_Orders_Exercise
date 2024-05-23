@@ -66,8 +66,69 @@ Content-Type: application/json
 POST http://localhost:4004/odata/v4/{{service}}/OrderItems
 Content-Type: application/json
 
-{"OrderItemID":453, "Order_OrderID":1, "Product_ProductID":1, "quantity":1234}
+{"OrderItemID":100, "Order_OrderID":1, "Product_ProductID":1, "quantity":1234}
 
 
 ###
-GET http://localhost:4004/odata/v4/{{service}}/
+GET http://localhost:4004/odata/v4/{{service}}/Orders
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+###
+POST http://localhost:4004/odata/v4/{{service}}/createOrder
+Content-Type: application/json
+
+
+{
+   "OrderID": 4, 
+  "customerID": 1,
+  "items": [
+    {
+      "ID": 5,
+      "ProdID": 1,
+      "OrdID": 4,
+      "quantity": 10
+    },
+    {
+      "ID": 6,
+      "ProdID": 1,
+      "OrdID": 4,
+      "quantity": 10
+    },
+    {
+      "ID": 6,
+      "ProdID": 1,
+      "OrdID": 5,
+      "quantity": 10
+    },
+    {
+      "ID": 6,
+      "ProdID": 1,
+      "OrdID": 5,
+      "quantity": 10
+    },
+    {
+      "ID": 6,
+      "ProdID": 1,
+      "OrdID": 5,
+      "quantity": 10
+    },
+    {
+      "ID": 6,
+      "ProdID": 1,
+      "OrdID": 5,
+      "quantity": 10
+    }
+
+  ]
+}
+
+///////////////////////////////////////////////////////////////////////
+###
+POST http://localhost:4004/odata/v4/{{service}}/calculateTotalDiscount
+Content-Type: application/json
+
+
+{"Order":{"OrderID":10 , "Customer_CustomerID":10 , "orderDate":"2024-05-23T08:23:45.123+02:00", "totalAmount":1000},"discountRate":10}
